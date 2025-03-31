@@ -18,19 +18,9 @@ interface BlogPaginationProps {
 const BlogPagination = ({
   totalPages = 5,
   currentPage = 1,
-  onPageChange = () => {},
+  onPageChange = () => { },
 }: BlogPaginationProps) => {
   const [activePage, setActivePage] = useState(currentPage);
-  const [cursorVisible, setCursorVisible] = useState(true);
-
-  useEffect(() => {
-    // Blinking cursor effect
-    const cursorInterval = setInterval(() => {
-      setCursorVisible((prev) => !prev);
-    }, 500);
-
-    return () => clearInterval(cursorInterval);
-  }, []);
 
   useEffect(() => {
     setActivePage(currentPage);
@@ -127,9 +117,6 @@ const BlogPagination = ({
                   className={`text-green-500 hover:text-green-300 hover:bg-gray-900 border-green-500 ${page === activePage ? "bg-gray-900" : ""}`}
                 >
                   {page}
-                  {page === activePage && cursorVisible && (
-                    <span className="ml-1 inline-block">_</span>
-                  )}
                 </PaginationLink>
               </PaginationItem>
             );

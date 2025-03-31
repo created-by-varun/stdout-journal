@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "../common/Footer";
 import { Button } from "../ui/button";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 
@@ -185,20 +186,7 @@ const BlogPost = ({ postId }: BlogPostProps) => {
         </div>
       </main>
 
-      <footer className="bg-black border-t border-green-500/30 p-4 text-center text-green-500/70">
-        <div className="container mx-auto">
-          <p>
-            <span className="text-green-500">user@stdout</span>:~$ echo "©
-            $(date +%Y) Stdout Journal. All rights reserved."
-          </p>
-          <p className="mt-2 text-sm">
-            Built with React + Tailwind CSS |{" "}
-            <a href="#" className="text-green-400 hover:text-green-300">
-              View Source
-            </a>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
